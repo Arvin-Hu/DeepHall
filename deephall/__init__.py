@@ -16,3 +16,4 @@ from deephall.config import Config
 from deephall.train import train
 
 __all__ = ["Config", "train"]
+# 这行代码定义了当从 deephall 包导入时，默认可见的属性。这意味着当用户执行 from deephall import * 时，只有 Config 和 train 会被导入。

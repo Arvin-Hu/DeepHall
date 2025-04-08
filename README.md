@@ -13,7 +13,8 @@ Currently, DeepHall supports running simulations with spin-polarized electrons o
 DeepHall requires Python `>=3.11` and JAX `0.4.35`. It is highly recommended to install DeepHall in a separate virtual environment.
 
 ```bash
-# Remember to activate your virtual environment
+conda create -n deephall python=3.11
+conda activate deephall
 git clone https://github.com/bytedance/DeepHall
 cd DeepHall
 pip install -e .                  # Install CPU version
