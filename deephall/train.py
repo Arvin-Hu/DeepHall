@@ -217,7 +217,7 @@ def cli(argv: list[str] | None = None) -> None:
     parser.add_argument("--debug", help="disable JAX pmap", action="store_true")  # 调试模式，禁用JAX pmap
     args = parser.parse_args(argv or sys.argv[1:] or ["--help"])  # 解析命令行参数
 
-    config = OmegaConf.structured(Config)  # 创建结构化配置
+    config = OmegaConf.structured(Config)  # 创建结构化配置的Config 实例
     if args.yml:
         config = OmegaConf.merge(config, OmegaConf.load(args.yml))  # 合并YML配置文件
     config = OmegaConf.merge(config, OmegaConf.from_dotlist(args.dotlist))  # 合并命令行配置
@@ -228,5 +228,5 @@ def cli(argv: list[str] | None = None) -> None:
         train(Config.from_dict(config))  # 正常启动训练
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # 这是 Python 的标准入口点检查，确保代码只有在直接运行脚本时才会执行，而不是在作为模块导入时执行。
     cli()  # 主程序入口
